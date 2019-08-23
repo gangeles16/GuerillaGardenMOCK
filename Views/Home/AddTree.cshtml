@@ -1,0 +1,66 @@
+@using gorillatree.Models
+@model Tree
+
+<h2>Plant a Tree</h2>
+<a href="/Dashboard">Home</a>
+
+<form asp-action="Planttree" asp-controller="Home" method="post">
+    <span asp-validation-for="TreeType">Tree Type</span>
+    <select asp-for="TreeType">
+        <option value="">--</option>
+        <option value="Red Maple">Red Maple</option>
+        <option value="River Birch">River Birch</option>
+        <option value="Weeping Willow">Weeping Willow</option>
+        <option value="Apple Tree">Apple Tree</option>
+    </select>
+
+    <div>
+        <span asp-validation-for="FlowerType">Flower Type</span>
+        <select asp-for="FlowerType">
+            <option value="">--</option>
+            <option value="Monoecious">Monoecious</option>
+            <option value="Dioecious">Dioecious</option>
+            <option value="Perfect">Perfect</option>
+        </select>
+    </div>
+    <div>
+        <span asp-validation-for="Gender">Gender</span>
+        <select asp-for="Gender">
+            <option value="">--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="N/A">N/A</option>
+        </select>
+    </div>
+    <div>
+        <span asp-validation-for="Location"></span>
+        <label asp-for="Location">Location</label>
+        <input asp-for="Location" >
+    </div>
+    <div>
+        <span asp-validation-for="Fruit">Fruit</span>
+        <select asp-for="Fruit">
+            <option value="">--</option>
+            <option value="Acorn">Acorn</option>
+            <option value="Drupe">Drupe</option>
+            <option value="Cone">Cone</option>
+            <option value="Nut">Nut</option>
+            <option value="Pod">Pod</option>
+            <option value="Berry">Berry</option>
+        </select>
+    </div>
+    <div>
+        <span asp-validation-for="GrowthHabit"></span>
+        <label asp-for="GrowthHabit">GrowthHabit</label>
+        <textarea asp-for="GrowthHabit"></textarea>
+    </div>
+    <div>
+        <span asp-validation-for="CareInstructions"></span>
+        <label asp-for="CareInstructions">Care Instructions</label>
+        <textarea asp-for="CareInstructions" > </textarea>
+    </div>
+    <span asp-validation-for="Attributes"></span>
+    <label asp-for="Attributes">Attributes</label>
+    <textarea asp-for="Attributes"> </textarea>
+    <input type="Submit" value="Submit">
+</form>

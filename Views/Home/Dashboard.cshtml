@@ -1,0 +1,112 @@
+@model List<Tree>
+
+    <style>
+    table {
+        border: 2px solid black;
+    }
+    tr {
+        border: 2px solid black; 
+    }
+    th {
+        border: 2px solid black;
+    }
+    .top {
+        text-align: right;
+        margin: 2px;
+        margin-left: 90%;
+    }
+    td {
+        border: 1px solid black;
+    }
+    body {
+        background: "~/images/background.png";
+    }
+    
+</style>
+
+<head>
+<h1>Hello @ViewBag.User.FirstName, You are now part of "Gorilla Gardening"</h1>
+<button class="top"><a asp-action="Logout" asp-controller="Home" >Logout</a></button>
+
+<button class="top"><a href="AddTree">Plant a tree</a></button>
+</head>
+<body class="background">
+    
+<table class="table table-striped table-dark">
+        <thead>
+            <tr>
+            <th scope="col">Tree</th>
+            <th scope="col">Flower</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Planter</th>
+            <th scope="col">Location</th>
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+        @foreach (var t in Model)
+        {
+            <tbody>
+                <tr>
+                <td>
+                    <a href="TreeDetail/@t.TreeId">@t.TreeType</a>
+                </td>
+                <td>
+                    @t.FlowerType
+                </td>
+                <td>
+                    @t.Gender
+                </td>
+                <td>
+                    @t.Planter.FirstName
+                </td>
+                <td>
+                    @t.Location
+                </td>
+                
+                <td>
+                    @if(ViewBag.User.UserId == t.UserId)
+                    {
+                        <a href="DeleteTree/@t.TreeId">Delete</a>
+                    }
+                    @if(ViewBag.User.UserId == t.UserId)
+                    {
+                        <form action="" >
+
+                        </form>
+                    }
+                    
+                </td>
+
+                </tr>
+            </tbody>
+        }
+        </table>
+
+
+
+<div style="width: 100%; display: inline-block; border: 2px solid black; padding: 1%; vertical-align: top;">
+    <h2>Search : </h2>
+    <partial name="SearchPartial"> </partial>
+</div>
+<br><br>
+
+<div style="width: 100%; display: inline-block; border: 2px solid black; padding: 1%; vertical-align: top;">
+    <h2>Search :</h2>
+    <partial name="LocPartial"> </partial>
+</div>
+
+</body>
+</html>
+    
+
+
+
+
+<!-- @foreach (var sametree in Model)
+{
+    if(sametree.TreeType =="Weeping Willow")
+    {
+        <p>@sametree.TreeType</p>
+    }  
+} -->
+

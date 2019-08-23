@@ -1,0 +1,19 @@
+@using gorillatree.Models
+@model Tree
+
+<h1>Check out this @Model.TreeType</h1>
+<a href="/Dashboard">Home</a>
+<h2>
+    <p>Tree Type: @Model.TreeType</p>
+    <p>Flower Type: @Model.FlowerType</p>
+    <p>Gender: @Model.Gender</p>
+    <p>Location: @Model.Location</p>
+    <p>Fruit: @Model.Fruit</p>
+    <p>Growth Habits: @Model.GrowthHabit</p>
+    <p>Care Instructions: @Model.CareInstructions</p>
+    <p>Attributes: @Model.Attributes</p>
+    
+</h2>
+<img src="~/images/@ViewBag.TreeImg" alt="@ViewBag.ImgAlt">
+<p>@ViewBag.test</p>
+<p>@ViewData["treeType"]</p>

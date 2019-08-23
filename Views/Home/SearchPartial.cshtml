@@ -1,0 +1,14 @@
+@model List<Tree>
+
+<form asp-action="Search" asp-controller="Home" method="post">
+    <span>Tree Type</span>
+    <select for="treeType" name="treeType">
+        <option value="">--</option>
+        <option value="Red Maple">Red Maple</option>
+        <option value="River Birch">River Birch</option>
+        <option value="Weeping Willow">Weeping Willow</option>
+        <option value="Apple Tree">Apple Tree</option>
+        <option value="All Trees">All Trees</option>
+    </select>
+    <button type="submit" value="submit">Search</button>
+</form> 

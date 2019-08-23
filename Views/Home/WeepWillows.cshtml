@@ -1,0 +1,13 @@
+@model List<Tree>
+    
+    <h1>All Weeping Willows </h1>
+    
+    
+@foreach (var sametree in Model)
+{
+    if(sametree.TreeType =="Weeping Willow")
+    {
+        <p>@sametree.TreeType</p>
+    }
+    
+}
